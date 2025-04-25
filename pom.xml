@@ -10,7 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo-group</module>
-        <module>user-app</module>
+        <module>library</module>
+        <module>app</module>
     </modules>
 
     <properties>

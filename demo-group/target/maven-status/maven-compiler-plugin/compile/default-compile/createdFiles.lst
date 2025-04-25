@@ -1,1 +1,3 @@
-com/example/Main.class
+com/example/dep/Main.class
+com/google/cloud/workflows/v1/LocationName.class
+com/google/cloud/workflows/v1/LocationName$Builder.class
