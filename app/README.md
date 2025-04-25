@@ -75,3 +75,10 @@ Class 'com.google.cloud.workflows.v1.LocationName' found in classpath
 Yes! v1.LocationName is accessible
 can access via library
 ```
+4. app is configured with maven-dependency-plugin. it gives warnings in this case
+
+run ` mvn dependency:analyze`, expect:
+```
+[WARNING] Used undeclared dependencies found:
+[WARNING]    com.google.api.grpc:proto-google-cloud-workflows-v1:jar:2.60.0:compile
+```

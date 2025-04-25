@@ -26,6 +26,46 @@
       <groupId>com.example</groupId>
       <artifactId>library</artifactId>
       <version>1.0-SNAPSHOT</version>
+      <!--   explicitly use a precompiled version for testing   -->
+      <scope>system</scope>
+      <systemPath>${basedir}/src/main/resources/library-1.0-SNAPSHOT.jar</systemPath>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+          <mainClass>com.example.app.Main</mainClass>
+          <classpathScope>runtime</classpathScope>
+          <additionalClasspathElements>
+            <additionalClasspathElement>
+              ${basedir}/src/main/resources/library-1.0-SNAPSHOT.jar
+            </additionalClasspathElement>
+          </additionalClasspathElements>
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.6.1</version>
+        <executions>
+          <execution>
+            <id>analyze-dependencies</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>analyze</goal>
+            </goals>
+            <configuration>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
