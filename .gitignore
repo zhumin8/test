@@ -19,10 +19,8 @@ target/
 **/__pycache__/
 .venv
 
-# library generation
-**/googleapis
-**/*egg-info/
-**/build/
-**/dist/
-library_generation/**/*.jar
-**/google-java-format.jar
+
+
+app/target/
+demo-group/target/
+library/target/
